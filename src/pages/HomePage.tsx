@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { FileText, CheckCircle, AlertTriangle, XCircle, Calendar, User, MapPin, Settings, BarChart3 } from 'lucide-react'
+import { FileText, CheckCircle, AlertTriangle, XCircle, Calendar, User, MapPin, BarChart3, Play, Settings } from 'lucide-react'
 
 interface Inspection {
   id: string
@@ -100,7 +100,7 @@ export default function HomePage() {
             보일러 점검 관리 시스템
           </h1>
           <p className="text-gray-600">
-            완전한 보일러 점검 및 문서 관리 시스템
+            캐스케이드 시스템 정기점검용 모바일 앱
           </p>
         </div>
       </div>
@@ -171,9 +171,10 @@ export default function HomePage() {
           </ul>
           <Link 
             to="/inspection" 
-            className="inline-block bg-white text-blue-600 px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors font-semibold"
+            className="inline-flex items-center space-x-2 bg-white text-blue-600 px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors font-semibold"
           >
-            점검 시작하기
+            <Play className="w-5 h-5" />
+            <span>점검 시작하기</span>
           </Link>
         </div>
         
@@ -219,11 +220,15 @@ export default function HomePage() {
           <div className="text-center py-8">
             <FileText className="w-16 h-16 text-gray-400 mx-auto mb-4" />
             <p className="text-gray-600 mb-4">아직 점검 기록이 없습니다</p>
+            <p className="text-sm text-gray-500 mb-4">
+              첫 점검을 시작하여 완전한 보고서를 생성해보세요
+            </p>
             <Link 
               to="/inspection" 
-              className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+              className="inline-flex items-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
             >
-              첫 점검 시작하기
+              <Play className="w-5 h-5" />
+              <span>첫 점검 시작하기</span>
             </Link>
           </div>
         ) : (
